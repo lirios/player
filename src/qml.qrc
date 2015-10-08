@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/MaterialWindow.qml</file>
+        <file>qml/ResizeArea.qml</file>
+        <file>qml/SystemBar.qml</file>
+        <file>qml/SystemButtons.qml</file>
+        <file>qml/Shortcuts.qml</file>
+        <file>qml/TopBar.qml</file>
+        <file>qml/BottomBar.qml</file>
+        <file>qml/SettingsDrawer.qml</file>
+        <file>qml/ColorPicker.qml</file>
+        <file>qml/ColorChooser.qml</file>
+    </qresource>
+</RCC>
