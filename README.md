@@ -9,4 +9,4 @@ Be sure to have Qt>5.4 and QML-Material installed, and assuming your compilation
 
 And launch the executable
 
-Thanks to the amazing QmlVlc
+Special thanks : QmlVlc
