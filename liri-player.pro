@@ -1,4 +1,4 @@
-QT += qml quick multimedia
+QT += qml quick multimedia core
 
 include(dependencies/QmlVlc/QmlVlc.pri)
 

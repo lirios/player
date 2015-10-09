@@ -12,6 +12,7 @@ MaterialWindow {
     width: 750
     height: 430
 
+    property var cliFile
     property bool fullscreen: visibility == 5
     property bool forceBars: player.state != "3"
 
@@ -117,5 +118,10 @@ MaterialWindow {
     }
 
 
-    Component.onCompleted: timer.start()
+    Component.onCompleted: {
+        if(cliFile)
+            player.mrl = cliFile
+        console.log(cliFile)
+        timer.start()
+    }
 }
