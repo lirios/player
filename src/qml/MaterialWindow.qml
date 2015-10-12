@@ -53,9 +53,10 @@ Controls.ApplicationWindow {
             margins: 10
         }
 
-        onPushed: __toolbar.push(page)
+        onPushed:{ __toolbar.push(page);  __toolbar.visible = true}
         onPopped: {
-             __toolbar.pop(page)
+             __toolbar.pop(page);
+             __toolbar.visible = false
         }
         onReplaced: __toolbar.replace(page)
 
@@ -63,9 +64,20 @@ Controls.ApplicationWindow {
 
     Toolbar {
         id: __toolbar
-        anchors.margins : 10
+        anchors {
+            rightMargin: 10
+            topMargin: 10
+            leftMargin: 10
+        }
         visible: false
         SystemButtons {
+            color: "transparent"
+            iconsColor: "white"
+            anchors {
+                right: parent.right
+                top: parent.top
+                margins: 10
+            }
             id: sysbutton
             onShowMinimized: __window.showMinimized();
             onShowMaximized: __window.showMaximized();

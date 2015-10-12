@@ -4,6 +4,10 @@
 *.o
 *.obj
 
+moc_*
+*.pro.user*
+qml_qrc.cpp
+
 # Precompiled Headers
 *.gch
 *.pch

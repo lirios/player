@@ -42,6 +42,13 @@ Rectangle {
             size: Units.dp(20)
             onClicked: forceBars = !forceBars
         }
+        IconButton {
+            id: libraryButton
+            iconName: "av/my_library_music"
+            color: "white"
+            size: Units.dp(30)
+            onClicked: pageStack.push(libraryPage)
+        }
 
     }
 

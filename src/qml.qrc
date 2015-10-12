@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>qml/main.qml</file>
+        <file>qml/PlayerWindow.qml</file>
         <file>qml/MaterialWindow.qml</file>
         <file>qml/ResizeArea.qml</file>
         <file>qml/SystemBar.qml</file>
@@ -11,5 +11,9 @@
         <file>qml/SettingsDrawer.qml</file>
         <file>qml/ColorPicker.qml</file>
         <file>qml/ColorChooser.qml</file>
+        <file>qml/BaseApplication.qml</file>
+        <file>qml/DesktopApplication.qml</file>
+        <file>qml/PlayerSurface.qml</file>
+        <file>qml/LibraryPage.qml</file>
     </qresource>
 </RCC>

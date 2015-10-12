@@ -30,7 +30,7 @@ int main(int argc, char **argv)
     */
 
     QQmlApplicationEngine appEngine;
-    appEngine.load(QUrl("qrc:/qml/main.qml"));
+    appEngine.load(QUrl("qrc:/qml/BaseApplication.qml"));
     appEngine.rootContext()->setContextProperty("G_Cursor",new Cursor);
     /*
     QObject *rootObject = appEngine.rootObjects().first();
