@@ -21,6 +21,8 @@ MaterialWindow {
 
     property var currentMedia
 
+    property bool isAudio
+
     theme {
             id: theme
             primaryColor: "#F44336"
@@ -62,7 +64,10 @@ MaterialWindow {
             id: player
             signal selected()
             onSelected: mrl = filedialog.fileUrl
-            onMediaPlayerPlaying: currentMedia = mediaDescription;
+            onMediaPlayerPlaying: {
+                currentMedia = mediaDescription;
+                isAudio = (video.height == 0) ? true : false
+            }
         }
 
         PlayerSurface { }

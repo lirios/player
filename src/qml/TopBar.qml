@@ -44,6 +44,7 @@ Rectangle {
         }
         IconButton {
             id: libraryButton
+            visible: false
             iconName: "av/my_library_music"
             color: "white"
             size: Units.dp(30)

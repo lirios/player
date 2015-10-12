@@ -21,7 +21,7 @@ VlcVideoSurface {
 
     Column {
         //anchors.top: parent.top
-        visible: currentMedia.artist
+        visible: isAudio
         //anchors.bottom: parent.bottom
         width: root.width - artwork.width - anchors.leftMargin * 3
         anchors.left: parent.left
