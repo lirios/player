@@ -10,5 +10,11 @@ Item {
             player.togglePause()
         }
     }
+    Controls.Action {
+        shortcut: "Ctrl+N"
+        onTriggered: {
+            root.app.createWindow()
+        }
+    }
 
 }
