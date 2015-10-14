@@ -11,7 +11,7 @@ Rectangle {
         right: parent.right
         left: parent.left
     }
-    height: Units.dp(70)
+    height: Units.dp(88)
     gradient: Gradient {
         GradientStop { position: 0.0; color: "transparent" }
         GradientStop { position: 1.0; color: Qt.rgba(0,0,0,0.6) }
@@ -38,29 +38,13 @@ Rectangle {
             top: parent.top
             margins: Units.dp(15)
         }
-        spacing: Units.dp(10)
+        spacing: -Units.dp(2)
 
-        Rectangle {
-            height: Units.dp(4)
-            opacity: 0.6
-            color: "white"
+        Slider {
+            value: player.position
+            darkBackground: true
             width: (bottomBar.width - parent.anchors.leftMargin - parent.anchors.rightMargin)
-
-            Rectangle {
-                color: theme.accentColor
-                height: parent.height
-                width: parent.width * player.position
-            }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    var adv =  mouseX / parent.width * player.length
-                    console.log(adv)
-                    player.time = Math.round(adv)
-                    console.log(player.state)
-                }
-            }
+            onPressedChanged: player.time = value * player.length
         }
 
         Row {
