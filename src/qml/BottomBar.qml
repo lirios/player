@@ -35,13 +35,14 @@ Rectangle {
         anchors {
             left: parent.left
             right: parent.right
-            top: parent.top
+            bottom: parent.bottom
             margins: Units.dp(15)
         }
         spacing: -Units.dp(2)
 
         Slider {
             value: player.position
+            visible: player.state != "0"
             darkBackground: true
             width: (bottomBar.width - parent.anchors.leftMargin - parent.anchors.rightMargin)
             onPressedChanged: player.time = value * player.length
