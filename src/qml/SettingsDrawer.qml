@@ -70,6 +70,30 @@ View {
             id: accentColorPicker
             color: theme.accentColor
         }
+        ListItem.Standard {
+            text: "Primary Color"
+            Rectangle {
+                id: primarycolorSample
+                width: Units.dp(30)
+                height: width
+                radius: width*0.5
+                color: primaryColorPicker.color
+                anchors {
+                        top: parent.top
+                        right: parent.right
+                        topMargin:5
+                        rightMargin: Units.dp(15)
+                }
+                MouseArea {
+                    anchors.fill: parent
+                    onPressed: primaryColorPicker.open(primarycolorSample, Units.dp(30), Units.dp(-4))
+                }
+            }
+        }
+        ColorPicker {
+            id: primaryColorPicker
+            color: theme.primaryColor
+        }
     }
     Row {
         anchors{
@@ -84,6 +108,7 @@ View {
             backgroundColor: theme.accentColor
             onClicked: {
                 theme.accentColor = accentColorPicker.color
+                theme.primaryColor = primaryColorPicker.color
                 close()
             }
         }
@@ -92,6 +117,7 @@ View {
             elevation: 1
             onClicked: {
                 accentColorPicker.color = theme.accentColor
+                primaryColorPicker.color = theme.primaryColor
                 close()
             }
         }

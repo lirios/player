@@ -13,8 +13,8 @@ Rectangle {
     }
     height: Units.dp(60)
     gradient: Gradient {
-        GradientStop { position: 0.0; color: Qt.rgba(0,0,0,0.4) }
-        GradientStop { position: 1.0; color: "transparent" }
+        GradientStop { position: 0.0; color: root.noMedia ? theme.primaryColor :  Qt.rgba(0,0,0,0.4) }
+        GradientStop { position: 1.0; color: root.noMedia ? theme.primaryColor :  "transparent" }
     }
     Behavior on opacity {
         NumberAnimation { duration: 500 }
@@ -49,6 +49,12 @@ Rectangle {
             color: "white"
             size: Units.dp(30)
             onClicked: pageStack.push(libraryPage)
+        }
+        Label {
+            text: "Liri Player"
+            style: "title"
+            color: "white"
+            visible: root.noMedia
         }
 
     }

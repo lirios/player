@@ -15,5 +15,7 @@
         <file>qml/DesktopApplication.qml</file>
         <file>qml/PlayerSurface.qml</file>
         <file>qml/LibraryPage.qml</file>
+        <file>qml/NoMediaSurface.qml</file>
+        <file>qml/PlaylistDrawer.qml</file>
     </qresource>
 </RCC>

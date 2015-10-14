@@ -18,8 +18,13 @@ MaterialWindow {
     property var cliFile
     property bool fullscreen: visibility == 5
     property bool forceBars: player.state != "3"
+    property bool noMedia: player.state == "0" || player.state == "5"
 
     property var currentMedia
+
+    property ListModel currentPlaylistModel: ListModel {
+        id: currentPlaylistModel
+    }
 
     property bool isAudio
 
@@ -36,6 +41,8 @@ MaterialWindow {
         property alias x: root.x
         property alias y: root.y
         property alias accentColor: theme.accentColor
+        property alias primaryColor: theme.primaryColor
+        property var recents
         /*property alias width: root.width
         property alias height: root.height*/
     }
@@ -56,21 +63,44 @@ MaterialWindow {
         timer.restart()
     }
 
+    function addCurrentToRecentlyPlayed () {
+        var l = recentlyPlayedModel.count
+        for(var i=0; i<l; i++)
+            if(recentlyPlayedModel.get(i).url == player.mrl)
+                return
+        application.recentlyPlayedModel.append({"name" : currentMedia.title, "url" : player.mrl, "type" : isAudio ? "audio" : "video", "artist": currentMedia.artist})
+    }
+
     initialPage: Page {
-        backgroundColor: "black"
+        backgroundColor: noMedia ? Palette.colors.grey[100] : "black"
         actionBar.hidden: true
 
         VlcPlayer {
             id: player
             signal selected()
-            onSelected: mrl = filedialog.fileUrl
+            onSelected: {
+                for(var i in filedialog.fileUrls)
+                    playlist.add(filedialog.fileUrls[i])
+                console.log(playlist.items)
+                currentPlaylistModel.clear()
+                for(i in playlist.items){
+                    console.log(JSON.stringify(playlist.items))
+                    currentPlaylistModel.append({"title": playlist.items[i].title, "artist": playlist.items[i].artist, "url": playlist.items[i].mrl, "cover": playlist.items[i].artworkURL})
+                }
+
+                playlist.mode = 1
+                playlist.play()
+            }
             onMediaPlayerPlaying: {
                 currentMedia = mediaDescription;
                 isAudio = (video.height == 0) ? true : false
+                addCurrentToRecentlyPlayed();
             }
         }
 
         PlayerSurface { }
+
+        NoMediaSurface { }
 
         TopBar {
             id: topBar
@@ -79,6 +109,18 @@ MaterialWindow {
 
         BottomBar {
             id: bottomBar
+            visible: !noMedia
+        }
+
+        ActionButton {
+            iconName: "file/folder_open"
+            visible: noMedia
+            anchors{
+                right: parent.right
+                bottom: parent.bottom
+                margins: Units.dp(20)
+            }
+            onClicked: filedialog.visible = true
         }
 
         FileDialog {
@@ -86,6 +128,7 @@ MaterialWindow {
             title: "Choisir un fichier vidéo"
             visible: false
             folder: shortcuts.home
+            selectMultiple: true
             Component.onCompleted : {
               filedialog.accepted.connect(player.selected)
             }
@@ -108,20 +151,19 @@ MaterialWindow {
            visible: false
            MouseArea {
                anchors.fill: parent
-               onClicked: settingsDrawer.close()
+               onClicked: {
+                   playlistDrawer.close()
+                   settingsDrawer.close()
+               }
            }
        }
 
 
        SettingsDrawer { id: settingsDrawer }
+
+       PlaylistDrawer { id: playlistDrawer }
     }
 
 
     property Page libraryPage: LibraryPage {}
-    Component.onCompleted: {
-        if(cliFile)
-            player.mrl = cliFile
-        console.log(cliFile)
-        timer.start()
-    }
 }

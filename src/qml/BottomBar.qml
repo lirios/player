@@ -24,13 +24,18 @@ Rectangle {
         return n > 9 ? "" + n: "0" + n;
     }
 
-    function getTime(ms) {
-        var s = Math.round(ms/1000)
-        var m = ~~(s/60)
-        var h = ~~(m/60)
-        return n(h) + ":" + n(m) + ":" + n(s)
+    function getTime (ms,h) {
+        ms = ms/1000 + ""
+        var sec_num = parseInt(ms, 10);
+        var hours   = Math.floor(sec_num / 3600);
+        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+        var seconds = sec_num - (hours * 3600) - (minutes * 60);
+        if (hours   < 10) {hours   = "0"+hours;}
+        if (minutes < 10) {minutes = "0"+minutes;}
+        if (seconds < 10) {seconds = "0"+seconds;}
+        var time = h ? hours+':'+minutes+':'+seconds : minutes+':'+seconds
+        return time;
     }
-
     Column {
         anchors {
             left: parent.left
@@ -51,10 +56,34 @@ Rectangle {
         Row {
             spacing: Units.dp(10)
             IconButton {
+                id: prevButton
+                iconName: "av/skip_previous"
+                color: "white"
+                size: Units.dp(30)
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: player.playlist.prev()
+                }
+             }
+            IconButton {
                 id: playButton
                 iconName: "av/play_arrow"
                 color: "white"
                 size: Units.dp(30)
+                MouseArea {
+                    anchors.fill: parent
+                    onPressAndHold: player.stop()
+                }
+             }
+            IconButton {
+                id: nextButton
+                iconName: "av/skip_next"
+                color: "white"
+                size: Units.dp(30)
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: player.playlist.next()
+                }
              }
             Rectangle {
                 height: playButton.height
@@ -65,13 +94,23 @@ Rectangle {
                     anchors.left: parent.left
                     anchors.verticalCenter: parent.verticalCenter
                     color: "white"
-                    text: getTime(player.time) + " / " + getTime(player.length)
+                    property bool h: ~~(player.time/1000/3600) == 0
+                    text: getTime(player.time,h) + " / " + getTime(player.length,h)
                 }
             }
             Row {
                id: rightButtons
-               width: cropButton.size
+               width: cropButton.size * 4 + Units.dp(30)
                spacing: Units.dp(10)
+               IconButton {
+                    id: playlistButton
+                    iconName: "av/queue_music"
+                    color: "white"
+                    size: Units.dp(30)
+                    onClicked: {
+                        playlistDrawer.open()
+                    }
+                }
                IconButton {
                     id: cropButton
                     iconName: "image/crop_16_9"
@@ -97,7 +136,7 @@ Rectangle {
         states: [
             State {
                 name: "0"
-                PropertyChanges { target: playButton; iconName: "file/folder_open"; onClicked: filedialog.visible = true }
+                PropertyChanges { target: playButton; iconName: "file/folder_open"; onClicked: filedialog.visible = true; }
                 PropertyChanges { target: time; text:  "Open a file" }
             },
             State {

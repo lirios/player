@@ -690,8 +690,10 @@ qrc_qml.cpp: src/qml.qrc \
 		src/qml/MaterialWindow.qml \
 		src/qml/SystemBar.qml \
 		src/qml/SettingsDrawer.qml \
+		src/qml/NoMediaSurface.qml \
 		src/qml/TopBar.qml \
 		src/qml/DesktopApplication.qml \
+		src/qml/PlaylistDrawer.qml \
 		src/qml/BottomBar.qml \
 		src/qml/ColorChooser.qml \
 		src/qml/ResizeArea.qml \

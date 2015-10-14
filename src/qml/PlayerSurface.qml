@@ -16,12 +16,12 @@ VlcVideoSurface {
         hoverEnabled: true
         onPositionChanged: restartBarsTimer()
         onClicked: player.togglePause()
-        onDoubleClicked: fullscreen ? showNormal() : showFullScreen()
+        onDoubleClicked: {fullscreen ? showNormal() : showFullScreen(); console.log(player.playlist.itemCount)}
     }
 
     Column {
         //anchors.top: parent.top
-        visible: isAudio
+        visible: isAudio && !root.noMedia
         //anchors.bottom: parent.bottom
         width: root.width - artwork.width - anchors.leftMargin * 3
         anchors.left: parent.left
@@ -59,6 +59,7 @@ VlcVideoSurface {
         id: artwork
         source: currentMedia.artworkURL
         width: height
+        visible: !root.noMedia
         anchors{
             top: parent.top
             right: parent.right
