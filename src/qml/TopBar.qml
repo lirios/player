@@ -121,7 +121,7 @@ Rectangle {
             }
         }
     }
-
+    /*
     SystemButtons {
         id: sysbuttons
         z:90
@@ -138,4 +138,5 @@ Rectangle {
             margins: Units.dp(15)
         }
     }
+    */
 }
