@@ -85,7 +85,8 @@ View {
             text: "add"
             elevation: 0
             onClicked: {
-                filedialog.visible = true
+                filedialog.toPlay = false;
+                filedialog.visible = true;
             }
         }
     }

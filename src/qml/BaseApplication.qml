@@ -17,9 +17,11 @@ Item {
     PlayerWindow { id: root }
 
     Component.onCompleted: {
-        console.log(application.settings.recents)
-        for (var i=0; i<application.settings.recents.length; i++)
-           application.recentlyPlayedModel.append(settings.recents[i]);
+        var recents = application.settings.recents, r_l = recents.length;
+        for (var i=r_l-1; i>=0; i--) {
+           application.recentlyPlayedModel.append(recents[i]);
+           console.log(JSON.stringify(recents[i]))
+        }
         if(cliFile)
             player.mrl = cliFile
         timer.start()
@@ -31,8 +33,13 @@ Item {
         for (var i=0; i<r_l; i++){
              item = application.recentlyPlayedModel.get(i);
              recents.push({"name": item.name, "url": item.url, "type": item.type, "artist" : item.artist})
+
+            console.log(JSON.stringify(item))
         }
+        recents.reverse()
         application.settings.recents = recents;
+        console.log(JSON.stringify(application.settings.recents))
+        //application.settings.recents = [];
     }
 
 }

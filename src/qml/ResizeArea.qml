@@ -42,7 +42,7 @@ MouseArea{
     }
 
     onPositionChanged: {
-        restartBarsTimer();
+        playerRoot.restartBarsTimer();
         if(Qt.LeftButton & pressedButtons){
             if("active" === state){
                 var xChange =  G_Cursor.pos().x - oPoint.x;

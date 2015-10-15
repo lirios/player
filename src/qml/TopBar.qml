@@ -81,6 +81,16 @@ Rectangle {
                 iconName: "file/folder_open"
                 onClicked: {
                     menu.close();
+                    filedialog.toPlay = true;
+                    filedialog.visible = true;
+                }
+            }
+            ListItem.Standard {
+                text: "Open and add to queue"
+                iconName: "av/queue_music"
+                onClicked: {
+                    menu.close();
+                    filedialog.toPlay = false;
                     filedialog.visible = true;
                 }
             }
@@ -115,6 +125,7 @@ Rectangle {
     SystemButtons {
         id: sysbuttons
         z:90
+        visible: !plugin
         color: "transparent"
         onShowMinimized: root.showMinimized();
         onShowMaximized: root.showMaximized();
