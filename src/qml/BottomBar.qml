@@ -70,10 +70,10 @@ Rectangle {
                 iconName: "av/play_arrow"
                 color: "white"
                 size: Units.dp(30)
-                MouseArea {
+                /*MouseArea {
                     anchors.fill: parent
                     onPressAndHold: player.stop()
-                }
+                }*/
              }
             IconButton {
                 id: nextButton
@@ -100,8 +100,33 @@ Rectangle {
             }
             Row {
                id: rightButtons
-               width: cropButton.size * 4 + Units.dp(30)
+               width: cropButton.size * 5 + Units.dp(50) + Units.dp(100)
                spacing: Units.dp(10)
+               IconButton {
+                    id: volumeButton
+                    iconName: mute ? "av/volume_mute" : "av/volume_up"
+                    color: "white"
+                    size: Units.dp(30)
+                    property bool mute: player.volume == 0
+                    onClicked: {
+                        if(mute)
+                            player.volume = 100
+                        else
+                            player.volume = 0
+                    }
+                }
+               Slider {
+                   value: player.volume
+                   darkBackground: true
+                   width: Units.dp(100)
+                   minimumValue: 0
+                   maximumValue: 100
+                   onPressedChanged: {
+                       if(pressed)
+                           player.volume = Math.floor(value)
+                   }
+               }
+
                IconButton {
                     id: playlistButton
                     iconName: "av/queue_music"

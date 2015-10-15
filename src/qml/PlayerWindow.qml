@@ -147,7 +147,6 @@ MaterialWindow {
            id: shadow
            color: Qt.rgba(0,0,0,0.1)
            anchors.fill: parent
-           anchors.margins: 10
            visible: false
            MouseArea {
                anchors.fill: parent

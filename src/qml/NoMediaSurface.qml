@@ -20,7 +20,7 @@ Rectangle {
 
         ListView {
             width: noMediaSurface.width
-            height:noMediaSurface.height
+            height:noMediaSurface.height - Units.dp(10) - topBar.height
             model: application.recentlyPlayedModel
             delegate: ListItem.Standard {
                 iconName: type == "audio" ? "av/album" : "av/movie"

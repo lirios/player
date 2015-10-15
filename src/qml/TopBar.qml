@@ -56,6 +56,12 @@ Rectangle {
             color: "white"
             visible: root.noMedia
         }
+        Label {
+            text: root.currentMedia.title
+            style: "title"
+            color: "white"
+            visible: !root.noMedia && !root.isAudio
+        }
 
     }
 
@@ -76,6 +82,15 @@ Rectangle {
                 onClicked: {
                     menu.close();
                     filedialog.visible = true;
+                }
+            }
+            ListItem.Standard {
+                text: "Stop"
+                iconName: "av/stop"
+                visible: !root.noMedia
+                onClicked: {
+                    player.stop()
+                    menu.close()
                 }
             }
             ListItem.Standard {
