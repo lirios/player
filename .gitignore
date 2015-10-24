@@ -8,6 +8,8 @@ moc_*
 *.pro.user*
 qml_qrc.cpp
 
+Makefile
+
 # Precompiled Headers
 *.gch
 *.pch
