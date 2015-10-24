@@ -9,6 +9,8 @@ moc_*
 qml_qrc.cpp
 
 Makefile
+liri-player
+
 
 # Precompiled Headers
 *.gch
