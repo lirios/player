@@ -1,12 +1,12 @@
 # Liri Player
 
 Instructions :
-Be sure to have Qt>5.4 and QML-Material installed, and assuming your compilation tool is make, type the folowing commands: 
+Be sure to have Qt>5.4 and QML-Material installed, and assuming your compilation tool is make, type the folowing commands: 
 * $ git clone https://github.com/pierremtb/liri-player --recursive
 * $ cd liri-player
-* $ qmake
+* $ qmake(-qt5 if necessary)
 * $ make
 
-And launch the executable
+And launch the executable (bash liri-player)
 
 Special thanks : QmlVlc

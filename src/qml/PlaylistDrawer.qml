@@ -4,7 +4,7 @@ import Material.ListItems 0.1 as ListItem
 
 View {
     id: playlistRoot
-    z:2
+    z:10
     backgroundColor: "white"
     width: Units.dp(350)
     anchors {
@@ -19,10 +19,10 @@ View {
             duration: 300
         }
     }
-
     function open() {
         anchors.rightMargin = 0
         shadow.visible = true
+        topBar.opacity = 100
     }
 
     function close() {
@@ -30,7 +30,7 @@ View {
         shadow.visible = false
     }
 
-    Column {
+    Column  {
         anchors.fill: parent
         Item {
             height: Units.dp(50)
@@ -61,6 +61,34 @@ View {
                     player.playlist.clear()
                 }
             }
+            Label {
+                id: labelclr
+                anchors {
+                    left: clearPlaylist.right
+                    leftMargin: Units.dp(8)
+                    verticalCenter: parent.verticalCenter
+                }
+
+
+                text: "Clear"
+            }
+
+            SystemButtons {
+                id: sysbuttons
+                z:90
+                visible: !plugin
+                color: "transparent"
+                onShowMinimized: root.showMinimized();
+                onShowMaximized: root.showMaximized();
+                onShowNormal: root.showNormal();
+                onClose: Qt.quit();
+                iconsColor: "grey"
+                anchors {
+                    top: parent.top
+                    margins: Units.dp(15)
+                    right: parent.right
+                }
+            }
         }
         ListView {
             model: root.currentPlaylistModel
@@ -78,17 +106,38 @@ View {
         anchors{
             bottom: parent.bottom
             horizontalCenter: parent.horizontalCenter
-            margins: Units.dp(15)
+            margins: Units.dp(0)
         }
-        spacing: Units.dp(15)
+        spacing: Units.dp(0)
+
+        Rectangle {
+            color: "white"
+            width: playlistDrawer.width
+            height: Units.dp(50)
+
+
         Button {
             text: "add"
-            elevation: 0
+            anchors {
+                left: parent.left
+                right: parent.right
+                top: parent.top
+                bottom: parent.bottom
+
+                rightMargin: Units.dp(30)
+                leftMargin: Units.dp(30)
+                bottomMargin: Units.dp(5)
+                topMargin: Units.dp(7)
+            }
+            id: addbutton
+            elevation: 2
             onClicked: {
                 filedialog.toPlay = false;
                 filedialog.visible = true;
             }
         }
+        }
     }
+
 }
 
