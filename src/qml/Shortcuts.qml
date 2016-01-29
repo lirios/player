@@ -16,5 +16,11 @@ Item {
             root.app.createWindow()
         }
     }
+    Controls.Action {
+        shortcut: "Esc"
+        onTriggered: {
+        if(root.fullscreen) showNormal(); else null();
+        }
+    }
 
 }

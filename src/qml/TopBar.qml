@@ -121,11 +121,11 @@ Rectangle {
             }
         }
     }
-    /*
+
     SystemButtons {
         id: sysbuttons
         z:90
-        visible: !plugin
+        visible: !plugin
         color: "transparent"
         onShowMinimized: root.showMinimized();
         onShowMaximized: root.showMaximized();
@@ -138,5 +138,4 @@ Rectangle {
             margins: Units.dp(15)
         }
     }
-    */
 }
