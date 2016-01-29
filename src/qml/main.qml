@@ -7,6 +7,8 @@ import QtMultimedia 5.0
 import QtQuick.Dialogs 1.0
 import Qt.labs.settings 1.0
 
+
+
 MaterialWindow {
     id: root
     width: 750
