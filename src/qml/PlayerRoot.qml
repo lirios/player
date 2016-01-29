@@ -10,7 +10,8 @@ Item {
     anchors.fill: parent
     property alias player: player
 
-    property bool plugin: false
+    property bool plugin: false;
+
 
     function showBars() {
         topBar.opacity = 1
@@ -97,7 +98,7 @@ Item {
 
     FileDialog {
         id: filedialog
-        title: "Choisir un fichier vidéo"
+        title: "Choose a file"
         visible: false
         folder: shortcuts.home
         selectMultiple: true
