@@ -65,7 +65,7 @@ TabbedPage {
             width: 200; height: 400
 
             FolderListModel {
-                folder: "/home/collin/Videos"
+                folder: "file:/home/Collin/Torrents/TV/American Dad/Seasons 1-10/"
                 //folder: EnvironmentVariable.value("HOME") +"Videos/"
                 // ^ This kept giving me errors I couldn't fix with my limited C++ knowledge. See qmlenvironemtvarialbe.h and the issue on github. -CN
                 id: folderModel
