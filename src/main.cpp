@@ -6,11 +6,17 @@ typedef QGuiApplication Application;
 #include <iostream>
 #include <QmlVlc.h>
 #include <QmlVlc/QmlVlcConfig.h>
-
 #include "cursor/cursor.h"
+#include "qml/qmlenvironmentvariable.h"
+
+//qmlRegisterSingletonType<QmlEnvironmentVariable>("MyModule", 1, 0,
+  //  "EnvironmentVariable", qmlenvironmentvariable_singletontype_provider);
 
 int main(int argc, char **argv)
+
 {
+
+
     RegisterQmlVlc();
     QmlVlcConfig& config = QmlVlcConfig::instance();
     config.enableAdjustFilter(true);
@@ -40,4 +46,7 @@ int main(int argc, char **argv)
     //}
     */
     return app.exec();
+
+// ...
+
 }

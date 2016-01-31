@@ -16,5 +16,17 @@ Item {
             root.app.createWindow()
         }
     }
+    Controls.Action {
+        shortcut: "Esc"
+        onTriggered: {
+        if(root.fullscreen) showNormal(); else null();
+        }
+    }
+    Controls.Action {
+        shortcut: "Ctrl+F"
+        onTriggered: {
+        if(root.fullscreen) null(); else showFullScreen();
+        }
+    }
 
 }

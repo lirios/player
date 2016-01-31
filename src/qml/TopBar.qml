@@ -1,10 +1,11 @@
 import QtQuick.Layouts 1.0
-import Material 0.1
+import Material 0.2
 import Material.ListItems 0.1 as ListItem
 import QtQuick 2.5
 
 Rectangle {
     id: top_bar
+    z:5
     opacity: 1
     anchors {
         top: parent.top
@@ -44,7 +45,7 @@ Rectangle {
         }
         IconButton {
             id: libraryButton
-            visible: false
+            visible: true
             iconName: "av/my_library_music"
             color: "white"
             size: Units.dp(30)
@@ -121,11 +122,11 @@ Rectangle {
             }
         }
     }
-    /*
+
     SystemButtons {
         id: sysbuttons
         z:90
-        visible: !plugin
+        visible: !plugin
         color: "transparent"
         onShowMinimized: root.showMinimized();
         onShowMaximized: root.showMaximized();
@@ -138,5 +139,4 @@ Rectangle {
             margins: Units.dp(15)
         }
     }
-    */
 }

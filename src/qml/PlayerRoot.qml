@@ -1,5 +1,5 @@
 import QtQuick.Layouts 1.0
-import Material 0.1
+import Material 0.2
 import Material.ListItems 0.1 as ListItem
 import QtQuick 2.5
 import QtQuick.Dialogs 1.0
@@ -10,7 +10,8 @@ Item {
     anchors.fill: parent
     property alias player: player
 
-    property bool plugin: false
+    property bool plugin: false;
+
 
     function showBars() {
         topBar.opacity = 1
@@ -97,7 +98,7 @@ Item {
 
     FileDialog {
         id: filedialog
-        title: "Choisir un fichier vidéo"
+        title: "Choose a file"
         visible: false
         folder: shortcuts.home
         selectMultiple: true
