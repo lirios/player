@@ -29,7 +29,7 @@ Rectangle {
             color: "transparent"
         }
         IconButton {
-            iconName: "navigation/expand_more"
+            iconSource: "qrc:///images/window-minimize.svg"
             width: Units.dp(20)
             height: width
             color: _back.iconsColor
@@ -37,7 +37,7 @@ Rectangle {
         }
 
         IconButton {
-            iconName: root.visibility == 4 ? "image/crop_7_5" : "image/crop_3_2"
+            iconSource: root.visibility == 4 ? "qrc:///images/window-restore.svg" : "qrc:///images/window-maximize.svg"
             width: Units.dp(20)
             id: sysbtn_max
             height: width
@@ -51,7 +51,7 @@ Rectangle {
         }
 
         IconButton {
-            iconName: "navigation/close"
+            iconSource: "qrc:///images/window-close.svg"
             width: Units.dp(20)
             height: width
             color: _back.iconsColor

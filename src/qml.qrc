@@ -18,5 +18,10 @@
         <file>qml/NoMediaSurface.qml</file>
         <file>qml/PlaylistDrawer.qml</file>
         <file>qml/PlayerRoot.qml</file>
-    </qresource>
+        <file>images/window-minimize.svg</file>
+        <file>images/window-maximize.svg</file>
+        <file>images/window-restore.svg</file>
+        <file>images/window-close.svg</file> 
+        <file>../README.md</file>
+   </qresource>
 </RCC>
