@@ -16,6 +16,7 @@ int main(int argc, char **argv)
 
 {
 
+
     RegisterQmlVlc();
     QmlVlcConfig& config = QmlVlcConfig::instance();
     config.enableAdjustFilter(true);

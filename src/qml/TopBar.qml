@@ -5,7 +5,7 @@ import QtQuick 2.5
 
 Rectangle {
     id: top_bar
-    z:3
+    z:5
     opacity: 1
     anchors {
         top: parent.top

@@ -17,7 +17,7 @@ VlcVideoSurface {
         onPositionChanged: restartBarsTimer()
         onClicked: player.togglePause()
         onDoubleClicked: {fullscreen ? showNormal() : showFullScreen(); console.log(player.playlist.itemCount)}
-        cursorShape: Qt.BlankCursor;
+  
     }
 
     Column {
