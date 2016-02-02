@@ -3,11 +3,11 @@ typedef QGuiApplication Application;
 #include <QtQml/QQmlApplicationEngine>
 #include <QtQml/QQmlContext>
 #include <QCommandLineParser>
-#include <iostream>
+#include <QDebug>
 #include <QmlVlc.h>
 #include <QmlVlc/QmlVlcConfig.h>
+#include <QStandardPaths>
 #include "cursor/cursor.h"
-#include "qml/qmlenvironmentvariable.h"
 
 //qmlRegisterSingletonType<QmlEnvironmentVariable>("MyModule", 1, 0,
   //  "EnvironmentVariable", qmlenvironmentvariable_singletontype_provider);
@@ -36,8 +36,16 @@ int main(int argc, char **argv)
     */
 
     QQmlApplicationEngine appEngine;
-    appEngine.load(QUrl("qrc:/qml/BaseApplication.qml"));
+
+    QUrl musicDir = QUrl::fromLocalFile(QStandardPaths::standardLocations(QStandardPaths::MusicLocation).last());
+    QUrl moviesDir = QUrl::fromLocalFile(QStandardPaths::standardLocations(QStandardPaths::MoviesLocation).last());
+    appEngine.rootContext()->setContextProperty("musicDir", musicDir);
+    appEngine.rootContext()->setContextProperty("moviesDir", moviesDir);
+
     appEngine.rootContext()->setContextProperty("G_Cursor",new Cursor);
+
+    appEngine.load(QUrl("qrc:/qml/BaseApplication.qml"));
+
     /*
     QObject *rootObject = appEngine.rootObjects().first();
     std::cout << args.at(0).toStdString();
