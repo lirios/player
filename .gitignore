@@ -1,36 +1,6 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-moc_*
-*.pro.user*
-qml_qrc.cpp
-
-Makefile
-liri-player
-
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+build/
+*.user
+*.qmlc
+*.jsc
+*.swp
+*.autosave

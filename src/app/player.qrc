@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/BottomBar.qml</file>
+        <file>qml/LibraryDrawer.qml</file>
+        <file>qml/main.qml</file>
+        <file>qml/PlayerPage.qml</file>
+        <file>qml/PlayerWindow.qml</file>
+        <file>qml/PlaylistDrawer.qml</file>
+        <file>qml/SystemButtons.qml</file>
+        <file>qml/TopBar.qml</file>
+        <file>images/window-close.svg</file>
+        <file>images/window-maximize.svg</file>
+        <file>images/window-minimize.svg</file>
+        <file>images/window-restore.svg</file>
+    </qresource>
+</RCC>
