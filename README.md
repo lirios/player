@@ -11,7 +11,6 @@ Player
 [![GitHub release](https://img.shields.io/github/release/lirios/player.svg)](https://github.com/lirios/player)
 [![Build Status](https://travis-ci.org/lirios/player.svg?branch=develop)](https://travis-ci.org/lirios/player)
 [![GitHub issues](https://img.shields.io/github/issues/lirios/player.svg)](https://github.com/lirios/player/issues)
-[![Maintained](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/lirios/player/commits/develop)
 
 Cross-platform video player.
 
