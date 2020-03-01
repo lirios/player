@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2020 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 set -e
 
 curl "https://raw.githubusercontent.com/lirios/infra-travis/master/installer" | bash
