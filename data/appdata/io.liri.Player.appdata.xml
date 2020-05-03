@@ -5,11 +5,12 @@ SPDX-FileCopyrightText: 2020 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 SPDX-License-Identifier: CC0-1.0
 -->
 <component type="desktop">
-  <id>io.liri.Player.desktop</id>
-  <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-3.0+</project_license>
+  <id>io.liri.Player</id>
   <name>Player</name>
   <summary>Play movies</summary>
+  <developer_name>The Liri developers</developer_name>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
   <description>
     <p>
       Player is the official movie player of the Liri desktop environment.
@@ -18,14 +19,19 @@ SPDX-License-Identifier: CC0-1.0
       It can open local files and lets you manage a play list.
     </p>
   </description>
-  <url type="homepage">https://liri.io/apps/player</url>
+  <launchable type="desktop-id">io.liri.Player.desktop</launchable>
+  <provides>
+    <binary>liri-player</binary>
+  </provides>
   <screenshots>
     <screenshot type="default" width="1024" height="576">https://raw.githubusercontent.com/lirios/player/develop/data/appdata/player1.png</screenshot>
     <screenshot width="1024" height="576">https://raw.githubusercontent.com/lirios/player/develop/data/appdata/player2.png</screenshot>
     <screenshot width="1024" height="576">https://raw.githubusercontent.com/lirios/player/develop/data/appdata/player3.png</screenshot>
   </screenshots>
-  <translation type="qt">liri-playet</translation>
-  <update_contact>info@liri.io</update_contact>
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
   <releases>
     <release version="1.0.0" type="development" date="2020-05-03">
       <description>
@@ -35,6 +41,13 @@ SPDX-License-Identifier: CC0-1.0
       </description>
     </release>
   </releases>
+  <url type="homepage">https://liri.io/apps/player</url>
+  <url type="bugtracker">https://github.com/lirios/player/issues/new</url>
+  <url type="donation">https://liri.io/get-involved/</url>
+  <url type="translate">https://www.transifex.com/lirios/liri-player/</url>
+  <project_group>Liri</project_group>
+  <update_contact>info_at_liri.io</update_contact>
+  <translation type="qt">liri-playet</translation>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>
