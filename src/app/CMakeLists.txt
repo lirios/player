@@ -29,7 +29,7 @@ liri_add_executable(LiriPlayer
         QT_NO_FOREACH
 	PLAYER_VERSION="${PROJECT_VERSION}"
     APPDATA
-        "${CMAKE_CURRENT_SOURCE_DIR}/../../data/io.liri.Player.appdata.xml"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../data/appdata/io.liri.Player.appdata.xml"
     DESKTOP
         "${CMAKE_CURRENT_SOURCE_DIR}/../../data/io.liri.Player.desktop"
     LIBRARIES

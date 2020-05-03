@@ -20,6 +20,8 @@ providing all the features you would expect from a modern player.
 Following Google's Material Design allows us to make interface
 clean and beautiful.
 
+![Screenshot](https://raw.githubusercontent.com/lirios/player/develop/data/appdata/player1.png)
+
 ## Dependencies
 
 Qt >= 5.10.0 with at least the following modules is required:
