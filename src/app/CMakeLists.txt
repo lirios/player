@@ -17,6 +17,8 @@ if(DEFINED _translations_destdir)
 endif()
 
 liri_add_executable("LiriPlayer"
+    OUTPUT_NAME
+        "liri-player"
     SOURCES
         main.cpp
         ${LiriPlayer_QM_FILES}
@@ -42,8 +44,6 @@ liri_add_executable("LiriPlayer"
 
 if(APPLE OR WIN32)
     liri_extend_target("LiriPlayer" OUTPUT_NAME "LiriPlayer")
-else()
-    liri_extend_target("LiriPlayer" OUTPUT_NAME "liri-player")
 endif()
 
 set_target_properties(LiriPlayer PROPERTIES
