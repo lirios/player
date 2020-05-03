@@ -16,9 +16,15 @@ if(DEFINED _translations_destdir)
     install(FILES ${LiriPlayer_QM_FILES} DESTINATION "${_translations_destdir}")
 endif()
 
+if(APPLE OR WIN32)
+    set(LiriPlayer_OUTPUT_NAME "LiriPlayer")
+else()
+    set(LiriPlayer_OUTPUT_NAME "liri-player")
+endif()
+
 liri_add_executable("LiriPlayer"
     OUTPUT_NAME
-        "liri-player"
+        "${LiriPlayer_OUTPUT_NAME}"
     SOURCES
         main.cpp
         ${LiriPlayer_QM_FILES}
@@ -41,10 +47,6 @@ liri_add_executable("LiriPlayer"
         Qt5::QuickControls2
     GUI
 )
-
-if(APPLE OR WIN32)
-    liri_extend_target("LiriPlayer" OUTPUT_NAME "LiriPlayer")
-endif()
 
 set_target_properties(LiriPlayer PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER "io.liri.Player"
