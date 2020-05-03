@@ -44,6 +44,7 @@ find_package(Qt5 "${QT_MIN_VERSION}"
         Qml
         Quick
         QuickControls2
+        LinguistTools
 )
 
 ## Add subdirectories:
