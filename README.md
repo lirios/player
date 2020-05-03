@@ -12,7 +12,13 @@ Player
 [![Build Status](https://travis-ci.org/lirios/player.svg?branch=develop)](https://travis-ci.org/lirios/player)
 [![GitHub issues](https://img.shields.io/github/issues/lirios/player.svg)](https://github.com/lirios/player/issues)
 
-Cross-platform video player.
+Liri Player is a cross-platform, Material Design video player.
+
+We aim to create a minimalistic, slick and simple video player
+providing all the features you would expect from a modern player.
+
+Following Google's Material Design allows us to make interface
+clean and beautiful.
 
 ## Dependencies
 
