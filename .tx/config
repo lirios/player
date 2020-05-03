@@ -1,0 +1,14 @@
+[main]
+host = https://www.transifex.com
+
+[liri-player.app]
+type = QT
+source_lang = en
+source_file = translations/app/liri-player.ts
+file_filter = translations/app/liri-player_<lang>.ts
+
+[liri-player.desktop-file]
+type = DESKTOP
+source_lang = en
+source_file = data/io.liri.Player.desktop.in
+file_filter = translations/data/io.liri.Player_<lang>.desktop

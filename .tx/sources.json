@@ -1,0 +1,13 @@
+[
+  {
+    "type": "ts",
+    "directory": "src/app",
+    "output_path": "translations/app/liri-player.ts"
+  },
+  {
+    "type": "desktop",
+    "source_file": "data/io.liri.Player.desktop.in",
+    "file_filter": "translations/data/io.liri.Player_<lang>.desktop",
+    "output_path": "data/io.liri.Player.desktop"
+  }
+]

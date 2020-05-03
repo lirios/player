@@ -2,11 +2,26 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
+# Translations
+file(GLOB LiriPlayer_TRANSLATIONS "${CMAKE_SOURCE_DIR}/translations/app/*_*.ts")
+qt5_add_translation(LiriPlayer_QM_FILES ${LiriPlayer_TRANSLATIONS})
+if(WIN32)
+    set(_translations_destdir "${CMAKE_CURRENT_BINARY_DIR}/translations")
+elseif(APPLE)
+    set(_translations_destdir "${CMAKE_CURRENT_BINARY_DIR}/Contents/Resources/data/translations")
+elseif(LINUX OR BSD)
+    set(_translations_destdir "${INSTALL_DATADIR}/liri-player/translations")
+endif()
+if(DEFINED _translations_destdir)
+    install(FILES ${LiriPlayer_QM_FILES} DESTINATION "${_translations_destdir}")
+endif()
+
 liri_add_executable(LiriPlayer
     OUTPUT_NAME
         "liri-player"
     SOURCES
         main.cpp
+        ${LiriPlayer_QM_FILES}
     RESOURCES
         player.qrc
     DEFINES
@@ -14,9 +29,9 @@ liri_add_executable(LiriPlayer
         QT_NO_FOREACH
 	PLAYER_VERSION="${PROJECT_VERSION}"
     APPDATA
-        "${CMAKE_CURRENT_SOURCE_DIR}/io.liri.Player.appdata.xml"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../data/io.liri.Player.appdata.xml"
     DESKTOP
-        "${CMAKE_CURRENT_SOURCE_DIR}/io.liri.Player.desktop"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../data/io.liri.Player.desktop"
     LIBRARIES
         Qt5::Core
         Qt5::Gui
