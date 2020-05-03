@@ -41,3 +41,8 @@ liri_add_executable(LiriPlayer
         Qt5::QuickControls2
     GUI
 )
+set_target_properties(LiriPlayer PROPERTIES
+    MACOSX_BUNDLE_GUI_IDENTIFIER "io.liri.Player"
+    MACOSX_BUNDLE_ICON_FILE "io.liri.Player"
+    MACOSX_BUNDLE_SHORT_VERSION_STRING "${PROJECT_VERSION}"
+)
