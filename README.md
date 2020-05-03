@@ -50,6 +50,13 @@ make install # use sudo if necessary
 Replace `/path/to/prefix` to your installation prefix.
 Default is `/usr/local`.
 
+## Credits
+
+The icon is a different coloring of `multimedia-video-player.svg` from
+[paper-icon-theme](https://github.com/snwh/paper-icon-theme) under the
+terms of the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+license.
+
 ## Licensing
 
 Licensed under the terms of the GNU General Public License version 3 or,
