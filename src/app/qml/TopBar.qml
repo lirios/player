@@ -27,12 +27,12 @@ Rectangle {
         GradientStop {
             position: 0.0
             color: player.status == MediaPlayer.NoMedia
-                   ? Material.primaryColor : Qt.rgba(0, 0, 0, 0.6)
+                   ? Material.color(Material.Red) : Qt.rgba(0, 0, 0, 0.6)
         }
         GradientStop {
             position: 1.0
             color: player.status == MediaPlayer.NoMedia
-                   ? Material.primaryColor : "transparent"
+                   ? Material.color(Material.Red) : "transparent"
         }
     }
 
@@ -150,6 +150,7 @@ Rectangle {
         }
     }
 
+    /*
     SystemButtons {
         anchors {
             right: parent.right
@@ -160,4 +161,5 @@ Rectangle {
         onShowNormal: window.showNormal()
         onClose: Qt.quit()
     }
+    */
 }
