@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 if(UNIX AND NOT APPLE AND NOT ANDROID)
     file(GLOB png_icons "${CMAKE_CURRENT_SOURCE_DIR}/hicolor/*/*/*.png")
     file(GLOB svg_icons "${CMAKE_CURRENT_SOURCE_DIR}/hicolor/*/*/*.svg")

@@ -1,0 +1,46 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Player
+Source: https://github.com/lirios/player
+
+Files: .mailmap
+Copyright: 2020 Pier Luigi Fiorini <pierluigi.fiorini@liri.io>
+License: CC0-1.0
+
+Files: .tag
+Copyright: 2020 Pier Luigi Fiorini <pierluigi.fiorini@liri.io>
+License: CC0-1.0
+
+Files: .tx/config
+Copyright: 2020 Pier Luigi Fiorini <pierluigi.fiorini@liri.io>
+License: CC0-1.0
+
+Files: .tx/sources.json
+Copyright: 2020 Pier Luigi Fiorini <pierluigi.fiorini@liri.io>
+License: CC0-1.0
+
+Files: data/appdata/*.png
+Copyright: 2020 Pier Luigi Fiorini <pierluigi.fiorini@liri.io>
+License: CC0-1.0
+
+Files: dist/flatpak/io.liri.Player.json
+Copyright: 2020 Pier Luigi Fiorini <pierluigi.fiorini@liri.io>
+License: CC0-1.0
+
+Files: translations/*
+Copyright: 2020 Liri Translators
+License: CC0-1.0
+
+Files: data/icons/io.liri.Player*.svg
+Copyright: 2020 Pier Luigi Fiorini <pierluigi.fiorini@liri.io>
+Copyright: 2020 Sam Hewitt <sam@snwh.org>
+License: CC-BY-SA-4.0
+
+Files: data/icons/hicolor/*/apps/io.liri.Player.png
+Copyright: 2020 Pier Luigi Fiorini <pierluigi.fiorini@liri.io>
+Copyright: 2020 Sam Hewitt <sam@snwh.org>
+License: CC-BY-SA-4.0
+
+Files: data/icons/hicolor/scalable/apps/io.liri.Player.svg
+Copyright: 2020 Pier Luigi Fiorini <pierluigi.fiorini@liri.io>
+Copyright: 2020 Sam Hewitt <sam@snwh.org>
+License: CC-BY-SA-4.0
