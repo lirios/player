@@ -9,8 +9,8 @@ Player
 
 [![License](https://img.shields.io/badge/license-GPLv3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![GitHub release](https://img.shields.io/github/release/lirios/player.svg)](https://github.com/lirios/player)
-[![Build Status](https://travis-ci.org/lirios/player.svg?branch=develop)](https://travis-ci.org/lirios/player)
 [![GitHub issues](https://img.shields.io/github/issues/lirios/player.svg)](https://github.com/lirios/player/issues)
+[![CI](https://github.com/lirios/player/workflows/CI/badge.svg?branch=develop&event=push)](https://github.com/lirios/player/actions?query=workflow%3ACI)
 
 Liri Player is a cross-platform, Material Design video player.
 
