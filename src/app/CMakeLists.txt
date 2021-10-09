@@ -53,3 +53,5 @@ set_target_properties(LiriPlayer PROPERTIES
     MACOSX_BUNDLE_ICON_FILE "io.liri.Player"
     MACOSX_BUNDLE_SHORT_VERSION_STRING "${PROJECT_VERSION}"
 )
+
+liri_finalize_executable(LiriPlayer)
